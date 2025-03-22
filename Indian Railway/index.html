@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRCTC Landing Page</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Welcome to IRCTC</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#booking" target="_blank">Book Tickets</a>
+        <a href="#">Train Schedule</a>
+        <a href="#">Contact Us</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Plan Your Journey with ease!</h1>
+        <p>Book train tickets, check train schedules, and much more.</p>
+        <button>Get Started</button>
+    </section>
+
+    <!-- Booking Section -->
+
+    <section id="booking" class="booking-section">
+        <h2>Book Your Ticket</h2>
+        <form>
+            <div class="suggestions">
+                <label for="from">From:</label>
+                <input type="text" id="from" placeholder="Enter starting station" oninput="showSuggestions(this, 'fromSuggestions')" required>
+                <div id="fromSuggestions" class="suggestions-list"></div>
+            </div>
+
+            <div class="suggestions">
+                <label for="to">To:</label>
+                <input type="text" id="to" placeholder="Enter destination station" oninput="showSuggestions(this, 'toSuggestions')" required>
+                <div id="toSuggestions" class="suggestions-list"></div>
+            </div>
+            <label for="date">Date of Journey:</label>
+            <input type="date" id="date" required>
+
+            <label for="class">Class:</label>
+            <select id="class" required>
+                <option value="sleeper">Sleeper</option>
+                <option value="3AC">3rd AC</option>
+                <option value="2AC">2nd AC</option>
+                <option value="1AC">1st AC</option>
+            </select>
+
+            <button type="submit">Book Ticket</button>
+        </form>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 IRCTC. All Rights Reserved.</p>
+    </footer>
+    <script>
+        const stationSuggestions = [
+            "Delhi", "Mumbai", "Chennai", "Kolkata", "Bangalore", "Hyderabad", "Ahmedabad", "Pune", "Jaipur", "Lucknow","Uttar Pradesh","Madhya Pradesh","Rajasthan","Gujarat","Maharashtra","Kanpur","Haryana",
+        ];
+
+        function showSuggestions(inputElement, suggestionsListId) {
+            const query = inputElement.value.toLowerCase();
+            const suggestionsList = document.getElementById(suggestionsListId);
+
+            // Clear previous suggestions
+            suggestionsList.innerHTML = "";
+
+            if (query.length > 0) {
+                const filteredSuggestions = stationSuggestions.filter(station =>
+                    station.toLowerCase().startsWith(query)
+                );
+
+                filteredSuggestions.forEach(station => {
+                    const suggestionItem = document.createElement("div");
+                    suggestionItem.textContent = station;
+                    suggestionItem.onclick = () => {
+                        inputElement.value = station;
+                        suggestionsList.innerHTML = ""; // Clear suggestions
+                    };
+                    suggestionsList.appendChild(suggestionItem);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
+ 
+  
+  

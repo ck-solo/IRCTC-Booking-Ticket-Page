@@ -1,0 +1,272 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+} 
+/* Header styles */
+header {
+    background-color: #003366;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav {
+    background-color: #00509e;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px;
+    background-image: url(/backgrounimg.irctc.jpg);
+    background-size: cover;
+    background-position:inherit;
+    color: white;
+    position: relative;
+    height: 500px;
+}
+
+.hero h1 {
+    font-size: 70px;
+    padding-top: 80px;
+    z-index: 9;
+}
+
+.hero p {
+    font-size: 30px;
+}
+
+.hero button {
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.hero button:hover {
+    background-color: #00509e;
+}
+ 
+  
+/* Ticket booking section */
+.booking-section {
+    padding: 50px 10%; 
+    text-align: center;
+}
+
+.booking-section h2 {
+    color: #003366;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.booking-section form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.booking-section input, .booking-section select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.booking-section button {
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.booking-section button:hover {
+    background-color: #00509e;
+}
+
+
+/* suggestions */
+.suggestions {
+    position: relative;
+}
+
+.suggestions-list {
+    position: absolute;
+    background: white; 
+    border-radius: 5px;
+    width: 100%;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.suggestions-list div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions-list div:hover {
+    background-color: #f5f5f5;
+}
+/* Footer */
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    /* Header */
+    header h1 {
+        font-size: 24px;
+    }
+
+    /* Navbar */
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 8px 0;
+        font-size: 14px;
+    }
+
+    /* Hero Section */
+    .hero {
+        height: 250px;
+        padding: 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .hero button {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    /* Booking Section */
+    .booking-section {
+        padding: 20px;
+    }
+
+    .booking-section h2 {
+        font-size: 20px;
+    }
+
+    .booking-section input,
+    .booking-section select,
+    .booking-section button {
+        font-size: 16px;
+    }
+
+    .booking-section button {
+        padding: 10px 20px;
+    }
+
+    /* Suggestions */
+    .suggestions-list {
+        font-size: 14px;
+    }
+
+    .suggestions-list div {
+        padding: 8px;
+    }
+
+    /* Footer */
+    footer {
+        font-size: 14px;
+    }
+}
+
+/* Media Query for Smaller Mobile Devices */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    /* Booking Section */
+    .booking-section h2 {
+        font-size: 18px;
+    }
+
+    .booking-section form {
+        padding: 0 10px;
+    }
+
+    .booking-section input,
+    .booking-section select,
+    .booking-section button {
+        font-size: 14px;
+    }
+
+    .booking-section button {
+        padding: 8px 16px;
+    }
+
+    /* Suggestions */
+    .suggestions-list {
+        font-size: 12px;
+    }
+
+    .suggestions-list div {
+        padding: 6px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
